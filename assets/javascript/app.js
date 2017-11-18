@@ -9,6 +9,7 @@
       $("#Game").show();
       $(".jumbotron").show();
       $("#done").click(function () {
+      $(".jumbotron").hide();
       $("#SplashScreen1").show();
       $("#answerPage").show();
 });
@@ -23,7 +24,7 @@ var intervalId;
 var clockRunning = false;
 // timer object
 var timer = {
-    time: 30,
+    time: 5,
 
     start: function() {
         if (!clockRunning) {
@@ -56,7 +57,12 @@ var timer = {
             clockRunning = false;
             clearInterval(intervalId);
             stop();
+            $(".jumbotron").hide();
             $("#answerPage").show();
+            answerPage();
+			correctCounter();
+			incorrectCounter();
+
         }
 
         else if (seconds < 10) {
@@ -74,21 +80,28 @@ var timer = {
 }
 	
 var userChoiceCorrect = ".correct";
-var userChoiceIncorrect = ".incorrect";
+// var userChoiceIncorrect = ".incorrect";
 var userDone = "#done";
 var correct = 0;
 var incorrect = 0;
+// var correctDisp = 0;
+// var correctCounter = 0;
+// var incorrectCounter = 0;
+// var incorrectDisp = 0;
 
 
 var correctCounter = function() {
       
-      document.querySelector("#correctDisp").innerHTML = correct;
+      document.querySelector("#correctDisp").innerHTML = correct += 1;
     };  
 
 var incorrectCounter = function() {
       
-      document.querySelector("#incorrectDisp").innerHTML = incorrect;
+      document.querySelector("#incorrectDisp").innerHTML = incorrect += 1;
     };  
+
+    //I tried a couple different ways to get my score counter to work, but it keeps just adding up
+    //to crazy numbers, I've searched for syntax errors but can't figure it out.
 //click events for radio buttons
 
 // 	function answerPage() {
@@ -116,20 +129,20 @@ var incorrectCounter = function() {
 
         
          // $("#userChoice").removeAttr("disabled");
+
 function answerPage() {
-         if ($(".correct + userChoiceCorrect")) {
+         if ($("userChoiceCorrect")) {
               //correct question clicked
-              document.querySelector("#correctDisp").innerHTML = correct;
+              // document.querySelector("#correctDisp").innerHTML = correct;
               correctCounter();
-             correct += 1;
+             // correct += 1;
          }
          else {
-//             // wrong question clicked
-             ($(".incorrect + userChoiceIncorrect"));
-             document.querySelector("#incorrectDisp").innerHTML = incorrect;
+//             //incorrect question clicked
+             // ($("userChoiceIncorrect")); {
+             // document.querySelector("#incorrectDisp").innerHTML = incorrect;
              incorrectCounter();
-
-             incorrect +=1;
+				// incorrect += 1;
         }
    }
 
@@ -137,7 +150,7 @@ function answerPage() {
 //DONE! need start page with start button
 
 //DONE! questions with options for answers
-//questions are true/false with 4 options for the correct answer
+//questions are correct/incorrect with 4 options for the correct answer
 //DONE! user can only choose one answer to each question
 //DONE!have to figure out how to add the inner HTML plus button choices
 
@@ -146,15 +159,15 @@ function answerPage() {
 //if user chooses correct answer it goes to the correct answers section on the 
 	// end page that pops up after the timer is up
 
-//else the user chooses incorrectly that is added to the incorrect answers on the end page
+//if else the user chooses incorrectly that is added to the incorrect answers on the end page
 
 //DONE! need done button if user finishes before time is up -NOT DONE: to send them to the results page
 
 //how do we change the page once the timer is up and we need to see if the user won or lost the game?
 	
-	//create container in html innerHtml
+	//DOne! create container in html innerHtml
 
-//way show correct incorrect page and show scores?
+// :( way show correct incorrect page and show scores?
 
 
 

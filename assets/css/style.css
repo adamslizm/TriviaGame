@@ -27,46 +27,40 @@ p {
 	background-color: yellow;
 }
 
-#Game {
-	
-	
-}
-
 .wrapper1 {
 	width: 100%;
 	height: 100%;
 	background-color: yellow;
 }
 
-
+/*start page*/
 #SplashScreen {
 	width: 100%;
 	height: 100%;
 	background-color: yellow;
 }
-
+/*score page*/
 #SplashScreen1 {
 	width: 100%;
 	height: 100%;
 	background-color: yellow;
 
 }
-
+/*timer display*/
 #display {
   font-family: monospace;
   font-size: 50px;
   color: white;
-  /* Typography */
   text-align: center;
-  /* Visual */
+  
 }
 
-#button { /* Typography */
+#button { 
   text-align: center;
 
 }
 
-answerPage {
+.answerPage {
 	width: 100%;
 	height: 100%;
 	background-color: yellow;

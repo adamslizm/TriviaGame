@@ -24,7 +24,7 @@ var intervalId;
 var clockRunning = false;
 // timer object
 var timer = {
-    time: 5,
+    time: 30,
 
     start: function() {
         if (!clockRunning) {
